@@ -5,9 +5,25 @@
     xmlns:local="using:App1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Width="540.5">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel>
 
-    </Grid>
+        <Grid Background="#FFF0F0F0" Margin="0,10,-542,-710">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="header" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="My Todo List" VerticalAlignment="Top" Height="20" Width="84"/>
+            <TextBox x:Name="textInput" HorizontalAlignment="Left" Margin="325,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" Height="32" KeyUp="textInput_KeyUp"/>
+            <Button x:Name="addButton" Content="Add" HorizontalAlignment="Left" Margin="330,92,0,0" VerticalAlignment="Top" ToolTipService.ToolTip="Adds new todo" Click="addButton_Click"/>
+            <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="396,92,0,0" VerticalAlignment="Top" ToolTipService.ToolTip="Deletes all marked items" Click="deleteButton_Click"/>
+            <Button x:Name="moveDownButton" Content="▼" HorizontalAlignment="Left" Margin="330,233,0,0" VerticalAlignment="Top" Click="moveDownButton_Click"/>
+            <Button x:Name="moveUpButton" Content="▲" HorizontalAlignment="Left" Margin="330,196,0,0" VerticalAlignment="Top" Click="moveUpButton_Click"/>
+            <ListView x:Name="todoList" HorizontalAlignment="Left" Height="629" Margin="10,36,0,0" VerticalAlignment="Top" Width="310" SelectionMode="Multiple" RequestedTheme="Light" Foreground="#FFCD1515" Background="#FFD1CFCF"/>
+
+        </Grid>
+    </RelativePanel>
 </Page>
